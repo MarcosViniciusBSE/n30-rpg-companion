@@ -6,6 +6,7 @@ from discord.ext import commands
 
 from models.roll import Roll
 from models.help import Help
+from data.dataHelper import getRitual
 
 load_dotenv()
 intents = discord.Intents.default()
@@ -31,13 +32,19 @@ async def oi(ctx):
 
 
 @bot.command()
-async def roll(ctx, arg):
-    await ctx.send(Roll(arg).rollDice())
+async def roll(ctx, diceRoll: str):
+    await ctx.send(Roll(diceRoll).diceToReponse())
+
+
+@bot.command()
+async def rollRitual(ctx, name: str, level: str):
+    ritual = getRitual(name)
+    await ctx.send(ritual.ritualToResponse(level))
 
 
 @bot.command(name="help")
-async def custom_help(ctx, arg):
-    await ctx.send(Help(arg).get_Help())
+async def custom_help(ctx, helpString: str):
+    await ctx.send(Help(helpString).get_Help())
 
 
 bot.run(os.getenv('TOKEN'))

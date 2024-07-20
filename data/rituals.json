@@ -1,0 +1,40 @@
+{
+  "rituals" : [
+    {
+      "name": "descarnar",
+      "element": "sangue",
+      "level": [
+        {
+          "levelName": "normal",
+          "damage": "1d6"
+        },
+        {
+          "levelName": "discente",
+          "damage": "2d6"
+        },
+        {
+          "levelName": "verdadeiro",
+          "damage": "3d6"
+        }
+      ]
+    },
+    {
+      "name": "teste",
+      "element": "conhecimento",
+      "level": [
+        {
+          "levelName": "normal",
+          "damage": "1d6"
+        },
+        {
+          "levelName": "discente",
+          "damage": "2d6"
+        },
+        {
+          "levelName": "verdadeiro",
+          "damage": "3d6"
+        }
+      ]
+    }
+  ]
+}
