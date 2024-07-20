@@ -1,11 +1,9 @@
 class Help:
-    def __init__(self, comando):
+    def __init__(self, comando:str):
         self.comando = comando
 
     def get_Help(self):
-        comando: str = self.comando
-
-        match comando.upper():
+        match self.comando.upper():
             case 'ROLL':
                 return """\
                 Você pode usar o comando roll utilizando a notação de dados e comando ou subtraindo um bonus.

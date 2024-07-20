@@ -11,7 +11,7 @@ load_dotenv()
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot = commands.Bot(command_prefix='-N30 ',help_command=None, intents=intents)
+bot = commands.Bot(command_prefix='-N30 ', help_command=None, intents=intents)
 
 
 @bot.event
@@ -32,14 +32,12 @@ async def oi(ctx):
 
 @bot.command()
 async def roll(ctx, arg):
-    roll = Roll(arg)
-    await ctx.send(roll.rollDice())
+    await ctx.send(Roll(arg).rollDice())
 
 
 @bot.command(name="help")
 async def custom_help(ctx, arg):
-    help = Help(arg)
-    await ctx.send(help.get_Help())
+    await ctx.send(Help(arg).get_Help())
 
 
 bot.run(os.getenv('TOKEN'))
